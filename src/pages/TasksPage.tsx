@@ -80,7 +80,7 @@ export default function TasksPage() {
   });
 
   const statusMut = useMutation({
-    mutationFn: ({ id, status }: { id: string; status: string }) => taskService.update(id, { status }),
+    mutationFn: ({ id, status }: { id: string; status: TaskStatus }) => taskService.update(id, { status }),
     onSuccess: () => { toast.success('Status updated'); qc.invalidateQueries({ queryKey: ['tasks'] }); },
   });
 

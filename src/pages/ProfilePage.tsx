@@ -11,7 +11,7 @@ import {
   TASK_STATUS_STYLES, TASK_STATUS_LABELS, KRA_STATUS_STYLES,
 } from '../utils';
 import { useAuth } from '../store/auth';
-import type { Task, Kra } from '../types';
+import type { Task, Kra, Role } from '../types';
 
 const TSS = TASK_STATUS_STYLES;
 const TSL = TASK_STATUS_LABELS;
@@ -63,7 +63,7 @@ export default function ProfilePage() {
             <div className="flex items-start justify-between">
               <div>
                 <h2 className="font-display text-xl font-semibold text-gray-100">{employee.name}</h2>
-                <Badge className={`${ROLE_COLORS[employee.role]} mt-1`}>{ROLE_LABELS[employee.role]}</Badge>
+                <Badge className={`${ROLE_COLORS[employee.role as Role]} mt-1`}>{ROLE_LABELS[employee.role as Role]}</Badge>
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">

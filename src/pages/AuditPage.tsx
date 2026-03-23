@@ -6,7 +6,7 @@ import {
   PageHeader, SearchInput, EmptyState, Skeleton, Avatar, Badge,
 } from '../components/ui';
 import { fmtDateTime, ROLE_LABELS } from '../utils';
-import type { AuditLog } from '../types';
+import type { AuditLog, Role } from '../types';
 
 const ENTITY_COLORS: Record<string, string> = {
   employees: 'bg-brand-500/15 text-brand-400',

@@ -150,7 +150,7 @@ export default function EmployeesPage() {
                     </div>
                   </td>
                   <td className="table-cell">
-                    <Badge className={ROLE_COLORS[emp.role]}>{ROLE_LABELS[emp.role]}</Badge>
+                    <Badge className={ROLE_COLORS[emp.role as Role]}>{ROLE_LABELS[emp.role as Role]}</Badge>
                   </td>
                   <td className="table-cell text-gray-500">{emp.department || '—'}</td>
                   <td className="table-cell text-gray-500">
@@ -239,7 +239,7 @@ export default function EmployeesPage() {
                 <option value="">Select manager…</option>
                 {allEmployees
                   .filter(e => ['hr', 'manager', 'senior_designer'].includes(e.role) && e.id !== editing?.id)
-                  .map(e => <option key={e.id} value={e.id}>{e.name} ({ROLE_LABELS[e.role]})</option>)}
+                  .map(e => <option key={e.id} value={e.id}>{e.name} ({ROLE_LABELS[e.role as Role]})</option>)}
               </select>
             </div>
           )}

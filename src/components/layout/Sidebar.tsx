@@ -56,7 +56,7 @@ export default function Sidebar() {
         <div className="text-[10px] font-semibold text-gray-600 uppercase tracking-widest px-3 pb-2">Navigation</div>
         {visibleItems.map(item => (
           <NavLink key={item.to} to={item.to}
-            className={({ isActive }) => clsx('nav-item', isActive && 'active')}
+            className={({ isActive }:{isActive:boolean}) => clsx('nav-item', isActive && 'active')}
             onClick={() => setMobileOpen(false)}>
             {item.icon}
             <span className="flex-1">{item.label}</span>
@@ -69,7 +69,7 @@ export default function Sidebar() {
       <div className="px-3 pb-4 space-y-1 border-t border-white/[0.06] pt-3">
         {/* User */}
         <NavLink to="/profile/me"
-          className={({ isActive }) => clsx('nav-item', isActive && 'active')}
+          className={({ isActive }:{isActive:boolean}) => clsx('nav-item', isActive && 'active')}
           onClick={() => setMobileOpen(false)}>
           <Avatar name={employee?.name || ''} url={employee?.avatar_url} size="xs" />
           <div className="flex-1 min-w-0">

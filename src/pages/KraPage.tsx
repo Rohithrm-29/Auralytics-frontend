@@ -12,7 +12,7 @@ import {
 } from '../components/ui';
 import { KRA_STATUS_STYLES, fmtDate, ROLE_LABELS } from '../utils';
 import { useAuth } from '../store/auth';
-import type { Kra, KraStatus } from '../types';
+import type { Kra, KraStatus, Role } from '../types';
 
 const schema = z.object({
   employee_id:  z.string().uuid('Select an employee'),
@@ -197,7 +197,7 @@ export default function KraPage() {
             <label className="label">Employee</label>
             <select {...register('employee_id')} className="input">
               <option value="">Select employee…</option>
-              {allEmployees.map((e: any) => <option key={e.id} value={e.id}>{e.name} ({ROLE_LABELS[e.role as any] || e.role})</option>)}
+              {allEmployees.map((e: any) => <option key={e.id} value={e.id}>{e.name} ({ROLE_LABELS[e.role as Role] || e.role})</option>)}
             </select>
             {errors.employee_id && <p className="text-xs text-rose-400 mt-1">{errors.employee_id.message}</p>}
           </div>
