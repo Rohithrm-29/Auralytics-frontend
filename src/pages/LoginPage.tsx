@@ -112,7 +112,7 @@ export default function LoginPage() {
           </form>
 
           {/* Demo credentials */}
-          <div className="mt-6 p-3 rounded-lg bg-surface-600 border border-white/[0.06]">
+          {/* <div className="mt-6 p-3 rounded-lg bg-surface-600 border border-white/[0.06]">
             <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-2">Demo Credentials</p>
             <div className="space-y-1">
               {[
@@ -127,7 +127,7 @@ export default function LoginPage() {
               ))}
               <p className="text-[11px] text-gray-600 mt-1.5">Password: <code className="font-mono">Password123!</code></p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <p className="text-center text-xs text-gray-700 mt-6">
